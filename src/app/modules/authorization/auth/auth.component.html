@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="auth-card">
+    <h2>{{type | title}} to continue</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" action="">
+      <input type="email" formControlName="email">
+      <input type="password" formControlName="password">
+      <div class="regist  ">
+        <button type="submit">Continue</button>
+        or
+        <button>google</button>
+      </div>
+      <a routerLink="/{{url}}">{{description}}</a>
+    </form>
+  </div>
+</div>
