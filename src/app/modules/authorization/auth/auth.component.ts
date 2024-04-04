@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription, interval } from 'rxjs';
+import { AutoUnsubscribe } from 'src/app/common/decorators/autounsubscribe.decorator';
 import { AuthService } from 'src/app/common/services/authservice.service';
 
-const urls = ['sign-up', 'log-in'];
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
+@AutoUnsubscribe()
 export class AuthComponent implements OnInit {
-  type!: string;
-  url!: string;
-  description!: string;
+  public type!: string;
+  public url!: string;
+  public description!: string;
 
   constructor(
     private authService: AuthService,
@@ -26,7 +28,7 @@ export class AuthComponent implements OnInit {
     this.getRouteData()
   }
 
-  form = new FormGroup({
+  public form = new FormGroup({
     email: new FormControl(),
     password: new FormControl(),
   })

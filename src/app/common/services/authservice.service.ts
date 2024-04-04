@@ -40,8 +40,6 @@ export class AuthService {
 
   // log in with email/password
   logIn(email: string, password: string) {
-    console.log('logIn');
-
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
