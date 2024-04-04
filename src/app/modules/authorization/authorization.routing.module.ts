@@ -7,12 +7,12 @@ const routes: Routes = [
   {
     path: 'signup',
     component: AuthComponent,
-    data: { url: 'login', description: 'Already have an account? Log in' },
+    data: { url: 'login', description: 'Already have an account? Log in', title: 'Sign up' },
   },
   {
     path: 'login',
     component: AuthComponent,
-    data: { url: 'signup', description: 'Create an account' }
+    data: { url: 'signup', description: 'Create an account', title: 'Log in' }
   },
 ];
 

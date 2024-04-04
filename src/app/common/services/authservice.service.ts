@@ -51,20 +51,21 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  signUp(email: string, password: string) {
-    console.log('signUp');
-    return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
-        // this.SendVerificationMail();
-        this.SetUserData(result.user);
-        this.router.navigate(['board']);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+  signUp(email: string | null | undefined, password: string) {
+    if (email) {
+      this.afAuth
+        .createUserWithEmailAndPassword(email, password)
+        .then((result) => {
+          /* Call the SendVerificaitonMail() function when new user sign 
+          up and returns promise */
+          // this.SendVerificationMail();
+          this.SetUserData(result.user);
+          this.router.navigate(['board']);
+        })
+        .catch((error) => {
+          window.alert(error.message);
+        });
+    }
   }
   // Send email verfificaiton when new user sign up
   private SendVerificationMail() {

@@ -1,15 +1,19 @@
-<div class="container">
-  <div class="auth-card">
-    <h2>{{type | title}} to continue</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" action="">
-      <input type="email" formControlName="email">
-      <input type="password" formControlName="password">
-      <div class="regist  ">
-        <button type="submit">Continue</button>
-        or
-        <button>google</button>
-      </div>
-      <a routerLink="/{{url}}">{{description}}</a>
-    </form>
+<div class="wrapper">
+  <div class="container">
+    <div class="auth-card">
+      <img class="logo" src="../../../../assets/icons/logo.svg" alt="logo">
+      <h5>{{title}} to continue</h5>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" action="">
+        <input type="email" formControlName="email" placeholder="Enter your email">
+        <input type="password" formControlName="password" placeholder="Enter your password">
+        <button type="submit" class="btn btn__submit">Log in</button>
+        <span>Or continue with:</span>
+        <button type="button" class="btn btn__google">
+          <img class="google-logo" src="../../../../assets/icons/google-icon-logo-svgrepo-com.svg" alt="google logo">
+          Google
+        </button>
+        <a class="action" routerLink="/{{url}}">{{description}}</a>
+      </form>
+    </div>
   </div>
 </div>
