@@ -1,0 +1,122 @@
+@import "../../../../assets/styles/variablis.scss";
+
+.wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  min-height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 400px;
+  padding: 32px 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+  box-sizing: border-box;
+  color: #44546F;
+  text-align: center;
+}
+
+.logo {
+  padding-bottom: 24px;
+}
+
+img[alt='logo'] {
+  height: auto;
+}
+
+h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $dark-text;
+  margin-bottom: 16px;
+}
+
+input {
+  height: 2.5rem;
+  padding: .5rem;
+  width: 100%;
+  border: 1px solid rgb(193, 199, 208);
+  border-radius: 3px;
+}
+
+.google {
+  box-shadow: none;
+  font-weight: bold;
+  border: 1px solid rgb(193, 199, 208);
+  border-radius: 3px;
+  color: rgb(23, 43, 77);
+  height: 40px;
+  line-height: 40px;
+  background: rgb(255, 255, 255);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form>span {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.btn {
+  border-radius: 3px;
+  text-align: center;
+  height: 40px;
+
+  &__submit {
+    font-weight: 500;
+    background: $blue;
+    color: $white;
+
+    &:hover {
+      background-color: $blue-active;
+    }
+  }
+
+  &__google {
+    border: 1px solid rgb(193, 199, 208);
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+}
+
+.google-logo {
+  height: 24px;
+}
+
+.action {
+  color: $blue;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.action:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-card {
+    box-shadow: none;
+  }
+}
